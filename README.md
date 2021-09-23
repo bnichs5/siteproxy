@@ -10,7 +10,7 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
                              +----------------+  |
                                                  +----> chinese forums
 ```
-请勿将本项目用于非法用途，否则后果自负。
+Please do not use this item for illegal purposes, otherwise you will be responsible for the consequences.
 
 ## 目录
 
@@ -25,6 +25,24 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 - [now_deployment](#now_deployment)
 - [vps_deployment](#vps_deployment)
 - [联系方式](#联系方式)
+
+
+Features
+principle
+Support agent website
+Deploy to cloudflare_worker
+Deploy to now server
+Deploy to heroku server
+Deploy to vps server
+cloudflare_worker_deployment
+now_deployment
+vps_deployment
+Contact information
+
+
+
+
+
 
 ### 特点
 - 代码量只有jsproxy的四分之一左右
@@ -58,11 +76,11 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 ```
 ### 部署到cloudflare_worker
 ```
-1. 注册一个cloudflare账户
-2. 在cloudflare上创建一个worker, 记下这个worker的子域名, 比如 abcd123.xxxx.workers.dev
-3. 找到本repo的build/worker.js文件，用文本编辑器打开，搜索siteproxy.netptop.workers.dev，替换成你的子域名
-4. 在cloudflare上编辑刚刚创建的worker， 将worker.js所有内容拷贝，覆盖粘贴到worker里面，保存
-5. 现在应该可以在浏览器中 访问你的子域名了
+1. Register a cloudflare account
+2. Create a worker on cloudflare and write down the subdomain name of this worker, such as abcd123.xxxx.workers.dev
+3. Find the build/worker.js file of this repo, open it with a text editor, search for siteproxy.netptop.workers.dev, and replace it with your subdomain name
+4. Edit the worker just created on cloudflare, copy all the contents of worker.js, overwrite and paste it into the worker, save
+5. You should now be able to access your subdomain in the browser 
 ```
 ### 部署到now服务器
 ```
@@ -76,14 +94,14 @@ user browser +-------------->+ siteproxy      +-------> wikipedia
 ```
 ### 部署到heroku服务器
 ```
-1. 注册一个heroku账户: https://www.heroku.com/
-2. 没有github账户的话, 注册一个github账户,fork本repo
-3. 在heroku的控制台里面创建一个应用, 且绑定到你刚才fork的repo上, 会得到一个域名类似的域名:your-domain-name.herokuapp.com
-4. 在heroku的'Deloy'页面, 点击'Enable Automatic Deploys'按钮
-5. 在github上修改你刚fork的repo, 将procfile里的域名修改为你的新域名(记得不要加https前缀):
-         "web: herokuAddr=siteproxy.herokuapp.com npm run start"
-   ====> "web: herokuAddr=your-domain-name.herokuapp.com npm run start"
-6. 现在可以在浏览器里面访问你的新域名了:  https://your-domain-name.herokuapp.com
+1. Register a heroku account: https://www.heroku.com/
+2. If you don't have a github account, register a github account and fork the repo
+3. Create an application in the heroku console and bind it to the repo you just forked, and you will get a domain name with a similar domain name: your-domain-name.herokuapp.com
+4. On heroku's'Deloy' page, click the'Enable Automatic Deploys' button
+5. Modify the repo you just forked on github, and change the domain name in procfile to your new domain name (remember not to add the https prefix):
+          "web: herokuAddr=siteproxy.herokuapp.com npm run start"
+    ====> "web: herokuAddr=your-domain-name.herokuapp.com npm run start"
+6. Now you can access your new domain name in the browser: https://your-domain-name.herokuapp.com 
 ```
 ### 部署到vps服务器
 ```
